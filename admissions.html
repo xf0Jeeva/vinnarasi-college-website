@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - Vinnarasi Community College, Vaiyampatty, Trichy</title>
+    <meta name="description" content="Find information on the admission process and requirements for Allied Health Science Courses at Vinnarasi Community College in Vaiyampatty, Manapparai, Trichy.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="site-title">
+            <a href="index.html">Vinnarasi Community College</a>
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Admissions</h1>
+
+    <section class="fade-in">
+        <h2>Apply for Admission</h2>
+        <p>Please fill out the form below to apply for admission to Vinnarasi Community College. Select your desired course from the list.</p>
+        
+        <form id="admissions-form" action="#" method="post"> <!-- Replace # with actual form submission endpoint -->
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="qualification">Qualification:</label>
+                <select id="qualification" name="qualification" required>
+                    <option value="">--Select Qualification--</option>
+                    <option value="10th">10th pass/fail</option>
+                    <option value="12th">12th pass/fail</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="course">Choose Your Course:</label>
+                <select id="course" name="course" required>
+                    <option value="">--Select a Course--</option>
+                    <option value="advanced-gda">Advanced Vocational Diploma in General Duty Assistant (Two Years)</option>
+                    <option value="vocational-gda">Vocational Diploma in General Duty Assistant (1 Year)</option>
+                    <option value="patient-care">Diploma in Patient Care Assistant (Two Years)</option>
+                    <option value="first-aid-patient-care">Diploma in First aid and Patient Care (Two Years)</option>
+                    <option value="medical-lab-tech">Diploma in Medical Laboratory Technology (Two Years)</option>
+                    <option value="operation-theatre-tech">Diploma in Operation Theatre Technology (Two Years)</option>
+                    <option value="village-health-worker">Village Health worker (1 Year)</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit">Submit Application</button>
+            </div>
+        </form>
+
+    </section>
+
+    <section class="fade-in">
+        <h2>How to Apply</h2>
+        <p>Provide step-by-step instructions on how to apply to Vinnarasi Community College. Include information about online applications, required documents, and submission procedures.</p>
+    </section>
+
+    <section class="fade-in">
+        <h2>Admission Requirements</h2>
+        <p>List the necessary academic qualifications, test scores, and any other requirements for admission to the college's programs.</p>
+    </section>
+
+    <section class="fade-in">
+        <h2>Important Dates</h2>
+        <p>Include key dates for application deadlines, entrance exams, interviews, and admission notifications.</p>
+    </section>
+
+    <!-- Footer or other content can go here -->
+
+    <footer>
+        <p>&copy; 2023 Vinnarasi Community College. All rights reserved.</p>
+        <p>Offering Allied Health Science Courses in Vaiyampatty, Manapparai, Trichy.</p>
+        <p>Contact us for more details on admissions and programs.</p>
+    </footer>
+
+    <script>
+        // Function to highlight active page in navigation
+        function setActiveNavLink() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Call the function when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setActiveNavLink();
+        });
+
+        // Function to get URL parameters
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Function to map course names to their values
+        function mapCourseNameToValue(courseName) {
+            const courseMap = {
+                'Advanced Vocational Diploma in General Duty Assistant': 'advanced-gda',
+                'Vocational Diploma in General Duty Assistant': 'vocational-gda',
+                'Diploma in Patient Care Assistant': 'patient-care',
+                'Diploma in First aid and Patient Care': 'first-aid-patient-care',
+                'Diploma in Medical Laboratory Technology': 'medical-lab-tech',
+                'Diploma in Operation Theatre Technology': 'operation-theatre-tech',
+                'Village Health worker': 'village-health-worker'
+            };
+            return courseMap[courseName] || '';
+        }
+
+        // Set the course when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const courseParam = getUrlParameter('course');
+            if (courseParam) {
+                const courseValue = mapCourseNameToValue(courseParam);
+                if (courseValue) {
+                    const courseSelect = document.getElementById('course');
+                    courseSelect.value = courseValue;
+                }
+            }
+        });
+
+        document.querySelector('#admissions-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const qualification = document.getElementById('qualification').value;
+            const course = document.getElementById('course').value;
+
+            // Format the message
+            const whatsappMessage = `Admission Application:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nAddress: ${address}\nQualification: ${qualification}\nCourse: ${course}`;
+
+            // WhatsApp number in international format (91 for India)
+            const phoneNumber = '919942185370'; 
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+            window.open(whatsappUrl, '_blank');
+        });
+
+        const navToggle = document.querySelector('.nav-toggle');
+        const header = document.querySelector('header');
+
+        navToggle.addEventListener('click', () => {
+            header.classList.toggle('nav-open');
+        });
+
+        // Fade-in animation on scroll
+        const faders = document.querySelectorAll('.fade-in');
+
+        const appearOptions = {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('appear');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
+
+</body>
+</html> 

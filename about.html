@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Vinnarasi Community College - Vaiyampatty, Manapparai, Trichy</title>
+    <meta name="description" content="Find out more about Vinnarasi Community College, its mission, and history in Vaiyampatty, Manapparai, Trichy.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="site-title">
+            <a href="index.html">Vinnarasi Community College</a>
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>About Vinnarasi Community College</h1>
+
+    <section class="fade-in">
+        <h2>Our Story</h2>
+        <p>Welcome to Vinnarasi Community College. Located in Vaiyampatty, Manapparai, Trichy, we were founded with a vision to empower individuals through quality education and vocational training, we have been dedicated to fostering a learning environment that encourages growth, skill development, and community engagement. Our journey began with a commitment to providing accessible and relevant education in Allied Health Sciences to meet the growing demands of the healthcare sector and contribute to the well-being of the community.</p>
+    </section>
+
+    <section class="fade-in">
+        <h2>Our Vision</h2>
+        <p>Our vision is to be a leading institution in Allied Health Science education, recognized for our academic excellence, innovative teaching methods, and significant contribution to student success and community health. We aim to produce competent, compassionate, and skilled professionals who are ready to make a positive impact in the healthcare industry.</p>
+    </section>
+
+    <section class="fade-in">
+        <h2>Meet Our Team</h2>
+        <p>Our dedicated faculty and staff are the backbone of Vinnarasi Community College. Composed of experienced professionals and passionate educators, they are committed to providing students with the knowledge, skills, and support needed to succeed. [Consider adding specific details about key faculty members, their expertise, and roles here.]</p>
+    </section>
+
+    <!-- Footer or other content can go here -->
+
+    <footer>
+        <p>&copy; 2023 Vinnarasi Community College. All rights reserved.</p>
+        <p>Offering Allied Health Science Courses in Vaiyampatty, Manapparai, Trichy.</p>
+        <p>Contact us for more details on admissions and programs.</p>
+    </footer>
+
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const header = document.querySelector('header');
+
+        navToggle.addEventListener('click', () => {
+            header.classList.toggle('nav-open');
+        });
+
+        // Fade-in animation on scroll
+        const faders = document.querySelectorAll('.fade-in');
+
+        const appearOptions = {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('appear');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+
+        // Check for elements in viewport on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            faders.forEach(fader => {
+                const rect = fader.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                    fader.classList.add('appear');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html> 

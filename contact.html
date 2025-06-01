@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Vinnarasi Community College, Vaiyampatty, Trichy</title>
+    <meta name="description" content="Get in touch with Vinnarasi Community College in Vaiyampatty, Manapparai, Trichy. Find our contact details and location.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="site-title">
+            <a href="index.html">Vinnarasi Community College</a>
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Contact Us</h1>
+
+    <section class="fade-in">
+        <h2>Get in Touch</h2>
+        <p>If you have any questions or inquiries, please feel free to contact us using the form below or the provided contact details.</p>
+        
+        <div class="contact-details">
+            <p>Phone 1: 9942185370</p>
+            <p>Phone 2: 8838518749</p>
+            <p>Email: jpvinnarasi@gmail.com</p>
+            <p>Address: Letchampatty Road, Vaiyampatty, Manapparai(TK), Trichy(DT)</p>
+            <p>Location: Letchapatty GH-Near, Palaniyappa Petrol Bunk Opposite</p>
+        </div>
+    </section>
+
+    <section class="fade-in">
+        <h2>Send us a Message</h2>
+        <form id="contact-form" action="#" method="post"> <!-- Replace # with actual form submission endpoint -->
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject">
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit">Send Message</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer or other content can go here -->
+
+    <footer>
+        <p>&copy; 2023 Vinnarasi Community College. All rights reserved.</p>
+        <p>Offering Allied Health Science Courses in Vaiyampatty, Manapparai, Trichy.</p>
+        <p>Contact us for more details on admissions and programs.</p>
+    </footer>
+
+    <script>
+        document.querySelector('#contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Format the message
+            const whatsappMessage = `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`;
+
+            // Replace 918838518749 with the correct WhatsApp number in international format (e.g., 91XXXXXXXXXX)
+            const phoneNumber = '919942185370'; 
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+            window.open(whatsappUrl, '_blank');
+        });
+
+        const navToggle = document.querySelector('.nav-toggle');
+        const header = document.querySelector('header');
+
+        navToggle.addEventListener('click', () => {
+            header.classList.toggle('nav-open');
+        });
+
+        // Fade-in animation on scroll
+        const faders = document.querySelectorAll('.fade-in');
+
+        const appearOptions = {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('appear');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
+
+</body>
+</html> 
