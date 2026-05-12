@@ -8,7 +8,8 @@ export default function Footer() {
         <div>
           <h4 style={{ color: '#fff', fontWeight: 700, marginBottom: 14, fontSize: '0.95rem' }}>Vinnarasi Community College</h4>
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.82rem', lineHeight: 1.7 }}>
-            Leading women&apos;s vocational training centre in Vaiyampatti, Manapparai, Trichy since 2006. Govt-approved diploma courses with 100% placement.
+            Also known as <strong>Vinnarasi Vocational Training Centre</strong>. 
+            The premier women&apos;s nursing and vocational college in Vaiyampatti, Manapparai Taluk, Trichy District since 2006.
           </p>
         </div>
 

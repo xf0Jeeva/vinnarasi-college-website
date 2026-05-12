@@ -18,6 +18,13 @@ export default function Header() {
 
   return (
     <>
+      <div className="top-bar">
+        <div className="top-bar-content">
+          <span><i className="fas fa-map-marker-alt"></i> Vaiyampatti, Manapparai, Trichy</span>
+          <span className="top-bar-spacer">|</span>
+          <span>Vinnarasi Vocational Training Centre</span>
+        </div>
+      </div>
       <header className="site-header">
         {/* Logo */}
         <Link href="/" className="site-logo" onClick={() => setOpen(false)}>

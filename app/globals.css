@@ -17,7 +17,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  padding-top: 80px;
+  padding-top: 112px; /* Increased to accommodate top-bar + header */
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
@@ -36,7 +36,33 @@ h1, h2, h3 { color: var(--text-color); font-weight: 700; letter-spacing: -0.025e
 
 /* ══════════════════════════════
    HEADER
-══════════════════════════════ */
+   ══════════════════════════════ */
+.top-bar {
+  background: var(--primary-color);
+  color: white;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.top-bar-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  max-width: 1200px;
+  padding: 0 24px;
+}
+.top-bar-content i { font-size: 0.75rem; opacity: 0.9; }
+.top-bar-spacer { opacity: 0.3; }
+
 .site-header {
   display: flex;
   align-items: center;
@@ -46,7 +72,8 @@ h1, h2, h3 { color: var(--text-color); font-weight: 700; letter-spacing: -0.025e
   background: rgba(255,255,255,0.97);
   backdrop-filter: blur(12px);
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 40px; /* Offset by top-bar height */
+  left: 0; right: 0;
   z-index: 999;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
@@ -123,14 +150,17 @@ h1, h2, h3 { color: var(--text-color); font-weight: 700; letter-spacing: -0.025e
 }
 
 @media (max-width: 1099px) {
-  body { padding-top: 72px; }
-  .site-header { padding: 0 16px; }
+  body { padding-top: 112px; }
+  .top-bar { height: auto; padding: 6px 12px; text-align: center; }
+  .top-bar-content { flex-direction: column; gap: 4px; }
+  .top-bar-spacer { display: none; }
+  .site-header { top: 40px; padding: 0 16px; }
   .site-nav { display: none; }
   .hbg { display: flex; }
   .site-logo span { font-size: 0.88rem; }
 }
 @media (min-width: 1100px) {
-  body { padding-top: 72px; }
+  body { padding-top: 112px; }
   .hbg { display: none; }
   .mob-nav { display: none !important; }
 }
