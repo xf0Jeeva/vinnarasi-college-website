@@ -7,20 +7,25 @@ import ScrollProgress from '@/components/ScrollProgress';
 export const metadata: Metadata = {
   metadataBase: new URL('https://vinnarasicommunitycollege.in'),
   title: {
-    default: 'Vinnarasi Community College | Best Vocational Training in Manapparai, Trichy',
-    template: '%s | Vinnarasi Community College',
+    default: 'Vinnarasi Community College | Top Nursing College in Vaiyampatty, Manapparai, Trichy',
+    template: '%s | Vinnarasi Community College & Vocational Centre',
   },
   description:
-    'Vinnarasi Community College in Vaiyampatti, Manapparai, Trichy — Tamil Nadu\'s trusted women\'s vocational training centre since 2006. 100% placement, govt-approved diploma courses, hospital training, affordable fees.',
+    'Vinnarasi Community College & Vocational Training Centre in Vaiyampatti, Manapparai, Trichy. The leading nursing and vocational college for women since 2006. 100% placement, govt-approved diploma courses (GDA, MLT, OT), and hospital training in Tamil Nadu.',
   keywords: [
     // Brand keywords
     'Vinnarasi Community College',
     'Vinnarasi Vocational Training Centre',
     'Vinnarasi College Vaiyampatti',
-    // Location + category (same terms users search for any college in the area)
-    'nursing college Manapparai',
+    'Vinarasi Vocational Centre',
+    // Location + category (High priority for ranking first)
+    'nursing college in Vaiyampatty',
+    'college in Vaiyampatty',
+    'nursing college Manapparai taluk',
+    'best college in Vaiyamppatty',
+    'vocational centre Vaiyampatty',
     'nursing college near Manapparai',
-    'allied health college Trichy',
+    'allied health college Trichy district',
     'GDA college Trichy',
     'GDA course Manapparai',
     'community college Vaiyampatti',
@@ -49,6 +54,7 @@ export const metadata: Metadata = {
     'skill development courses Trichy district',
     'paramedical courses Trichy',
     'paramedical college Manapparai',
+    'best vocational training in Tamil Nadu',
   ],
   authors: [{ name: 'Vinnarasi Community College' }],
   creator: 'Vinnarasi Community College',
