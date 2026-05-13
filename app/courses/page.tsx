@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import FadeIn from '@/components/FadeIn';
 
 export const metadata: Metadata = {
   title: 'Vocational Diploma Courses in Trichy | GDA, Patient Care, MLT, OT Technology',
@@ -26,6 +25,7 @@ const courses = [
     title: 'Advanced Vocational Diploma in General Duty Assistant',
     duration: '2 Years',
     tag: 'Most Popular',
+    tagColor: '#2563eb',
     highlights: ['Patient care & hygiene', 'Basic medical procedures', 'Communication skills', 'Hospital internship'],
     desc: 'Equip yourself with essential knowledge and practical skills to support healthcare professionals. Covers patient care, hygiene, basic medical procedures, and communication skills.',
   },
@@ -34,6 +34,7 @@ const courses = [
     title: 'Vocational Diploma in General Duty Assistant',
     duration: '1 Year',
     tag: 'Fast Track',
+    tagColor: '#059669',
     highlights: ['Basic patient care', 'Clinical support tasks', 'Hospital hygiene', 'Quick placement'],
     desc: 'A one-year fast-track program to assist healthcare staff with basic patient care, hygiene maintenance, and clinical support in hospitals and healthcare facilities.',
   },
@@ -42,6 +43,7 @@ const courses = [
     title: 'Diploma in Patient Care Assistant',
     duration: '2 Years',
     tag: '',
+    tagColor: '',
     highlights: ['Vital signs monitoring', 'Mobility assistance', 'Patient well-being', 'Supervised care'],
     desc: 'Develop essential patient care skills including monitoring vital signs, assisting with mobility, maintaining hygiene, and supporting patient well-being under professional supervision.',
   },
@@ -50,6 +52,7 @@ const courses = [
     title: 'Diploma in First Aid and Patient Care',
     duration: '2 Years',
     tag: '',
+    tagColor: '',
     highlights: ['Emergency first aid', 'Clinical support', 'Patient handling', 'Crisis response'],
     desc: 'Combines first aid techniques with patient care skills. Learn to handle emergency situations and provide basic support in clinical environments.',
   },
@@ -58,6 +61,7 @@ const courses = [
     title: 'Diploma in Medical Laboratory Technology',
     duration: '2 Years',
     tag: '',
+    tagColor: '',
     highlights: ['Diagnostic techniques', 'Sample collection', 'Lab equipment', 'Medical testing'],
     desc: 'Training in diagnostic techniques, sample collection, and lab equipment operation. Perfect for those interested in the technical aspects of healthcare and medical testing.',
   },
@@ -66,6 +70,7 @@ const courses = [
     title: 'Diploma in Operation Theatre Technology',
     duration: '2 Years',
     tag: '',
+    tagColor: '',
     highlights: ['Sterilization protocols', 'Surgical instruments', 'Pre/post-op care', 'OT procedures'],
     desc: 'Focused on operation theatre procedures including sterilization protocols, surgical instrument handling, and pre/post-operative patient care.',
   },
@@ -74,6 +79,7 @@ const courses = [
     title: 'Village Health Worker',
     duration: '1 Year',
     tag: 'Community',
+    tagColor: '#7c3aed',
     highlights: ['Primary healthcare', 'Rural health support', 'Community outreach', 'Basic medical care'],
     desc: 'Trains individuals to deliver basic health services and provide primary medical care in rural areas. Perfect for community healthcare and rural health support.',
   },
@@ -88,62 +94,81 @@ const perks = [
 
 export default function CoursesPage() {
   return (
-    <>
+    <div className="courses-root">
+      {/* Hero */}
       <div className="hero-inner">
         <h1>Our Courses</h1>
         <p>Government-approved vocational diploma programs designed for real-world healthcare careers — with guaranteed placement support.</p>
       </div>
 
-      {/* Perks bar */}
-      <div className="courses-perks-bar">
+      {/* Perks strip */}
+      <div className="crs-perks">
         {perks.map((p) => (
-          <div key={p.label} className="courses-perk">
+          <div key={p.label} className="crs-perk">
             <i className={p.icon}></i>
             <span>{p.label}</span>
           </div>
         ))}
       </div>
 
-      {/* Course cards */}
-      <div className="courses-page-grid">
-        {courses.map((course) => (
-          <FadeIn key={course.title}>
-            <div className="cp-card">
-              {course.tag && <span className="cp-tag">{course.tag}</span>}
-              <div className="cp-icon"><i className={course.icon}></i></div>
-              <div className="cp-duration"><i className="fas fa-clock"></i> {course.duration}</div>
-              <h3>{course.title}</h3>
-              <p className="cp-desc">{course.desc}</p>
-              <ul className="cp-highlights">
+      {/* Course list */}
+      <div className="crs-list">
+        {courses.map((course, idx) => (
+          <div key={course.title} className="crs-card">
+            <div className="crs-card-left">
+              <div className="crs-icon-wrap">
+                <i className={course.icon}></i>
+              </div>
+            </div>
+            <div className="crs-card-body">
+              <div className="crs-card-top">
+                <div className="crs-meta">
+                  <span className="crs-num">0{idx + 1}</span>
+                  <span className="crs-dur"><i className="fas fa-clock"></i> {course.duration}</span>
+                  {course.tag && (
+                    <span className="crs-tag" style={{ background: course.tagColor + '18', color: course.tagColor, border: `1px solid ${course.tagColor}40` }}>
+                      {course.tag}
+                    </span>
+                  )}
+                </div>
+                <h3 className="crs-title">{course.title}</h3>
+                <p className="crs-desc">{course.desc}</p>
+              </div>
+              <div className="crs-chips">
                 {course.highlights.map((h) => (
-                  <li key={h}><i className="fas fa-check"></i> {h}</li>
+                  <span key={h} className="crs-chip">
+                    <i className="fas fa-check"></i> {h}
+                  </span>
                 ))}
-              </ul>
-              <Link href={`/admissions?course=${encodeURIComponent(course.title)}`} className="cp-apply-btn">
+              </div>
+              <Link
+                href={`/admissions?course=${encodeURIComponent(course.title)}`}
+                className="crs-apply"
+              >
                 Apply Now <i className="fas fa-arrow-right"></i>
               </Link>
             </div>
-          </FadeIn>
+          </div>
         ))}
       </div>
 
-      {/* CTA strip */}
-      <FadeIn>
-        <div className="courses-cta-strip">
-          <div className="courses-cta-text">
+      {/* CTA */}
+      <div className="crs-cta">
+        <div className="crs-cta-inner">
+          <div className="crs-cta-text">
             <h3>Not sure which course to pick?</h3>
-            <p>Talk to our counsellor — we&apos;ll help you choose the right path.</p>
+            <p>Talk to our counsellor — we&apos;ll help you choose the right path for your career.</p>
           </div>
-          <div className="courses-cta-actions">
-            <a href="tel:+919942185370" className="cp-apply-btn">
+          <div className="crs-cta-btns">
+            <a href="tel:+919942185370" className="crs-cta-call">
               <i className="fas fa-phone-alt"></i> Call Us
             </a>
-            <a href="https://wa.me/919942185370" target="_blank" rel="noreferrer" className="cp-wa-btn">
+            <a href="https://wa.me/919942185370" target="_blank" rel="noreferrer" className="crs-cta-wa">
               <i className="fab fa-whatsapp"></i> WhatsApp
             </a>
           </div>
         </div>
-      </FadeIn>
-    </>
+      </div>
+    </div>
   );
 }

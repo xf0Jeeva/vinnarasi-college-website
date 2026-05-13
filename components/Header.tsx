@@ -18,13 +18,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="top-bar">
-        <div className="top-bar-content">
-          <span><i className="fas fa-map-marker-alt"></i> Vaiyampatti, Manapparai, Trichy</span>
-          <span className="top-bar-spacer">|</span>
-          <span>Vinnarasi Vocational Training Centre</span>
-        </div>
-      </div>
+
       <header className="site-header">
         {/* Logo */}
         <Link href="/" className="site-logo" onClick={() => setOpen(false)}>
@@ -48,7 +42,7 @@ export default function Header() {
         {/* Hamburger button */}
         <button
           className={`hbg${open ? ' hbg--open' : ''}`}
-          onClick={() => setOpen(v => !v)}
+          onClick={() => setOpen(!open)}
           aria-label="Menu"
           type="button"
         >
@@ -56,27 +50,30 @@ export default function Header() {
         </button>
       </header>
 
-      {/* Mobile nav panel */}
-      <div className={`mob-nav${open ? ' mob-nav--open' : ''}`}>
-        <ul>
-          {navLinks.map(({ href, label }) => (
-            <li key={href}>
-              <Link
-                href={href}
-                className={pathname === href ? 'nav-active' : ''}
-                onClick={() => setOpen(false)}
-              >
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <a href="tel:+919942185370" className="mob-call" onClick={() => setOpen(false)}>
-          <i className="fas fa-phone-alt" /> +91 99421 85370
-        </a>
-      </div>
-
-      {open && <div className="mob-overlay" onClick={() => setOpen(false)} />}
+      {/* Mobile nav panel & Overlay */}
+      {open && (
+        <>
+          <div className="mob-nav mob-nav--open">
+            <ul>
+              {navLinks.map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className={pathname === href ? 'nav-active' : ''}
+                    onClick={() => setOpen(false)}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <a href="tel:+919942185370" className="mob-call" onClick={() => setOpen(false)}>
+              <i className="fas fa-phone-alt" /> +91 99421 85370
+            </a>
+          </div>
+          <div className="mob-overlay" onClick={() => setOpen(false)} />
+        </>
+      )}
     </>
   );
 }
