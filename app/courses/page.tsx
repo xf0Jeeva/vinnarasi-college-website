@@ -98,27 +98,27 @@ const perks = [
 
 export default function CoursesPage() {
   return (
-    <div className="courses-root">
+    <main className="courses-root">
       {/* Hero */}
-      <div className="hero-inner">
-        <h1>Our Courses</h1>
-        <p>Government-approved vocational diploma programs designed for real-world healthcare careers — with guaranteed placement support.</p>
-      </div>
+      <header className="hero-inner">
+        <h1>Vocational Diploma Courses</h1>
+        <p>Government-approved healthcare and nursing programs in Vaiyampatty, designed for real-world careers with guaranteed placement support.</p>
+      </header>
 
       {/* Perks strip */}
-      <div className="crs-perks">
+      <section className="crs-perks" aria-label="Course Benefits">
         {perks.map((p) => (
           <div key={p.label} className="crs-perk">
             <i className={p.icon}></i>
             <span>{p.label}</span>
           </div>
         ))}
-      </div>
+      </section>
 
       {/* Course list */}
-      <div className="crs-list">
+      <section className="crs-list" aria-label="List of Available Courses">
         {courses.map((course, idx) => (
-          <div key={course.title} className="crs-card">
+          <article key={course.title} className="crs-card">
             <div className="crs-card-left">
               <div className="crs-icon-wrap">
                 <i className={course.icon}></i>
@@ -152,15 +152,15 @@ export default function CoursesPage() {
                 Apply Now <i className="fas fa-arrow-right"></i>
               </Link>
             </div>
-          </div>
+          </article>
         ))}
-      </div>
+      </section>
 
       {/* CTA */}
-      <div className="crs-cta">
+      <section className="crs-cta" aria-labelledby="cta-heading">
         <div className="crs-cta-inner">
           <div className="crs-cta-text">
-            <h3>Not sure which course to pick?</h3>
+            <h3 id="cta-heading">Not sure which course to pick?</h3>
             <p>Talk to our counsellor — we&apos;ll help you choose the right path for your career.</p>
           </div>
           <div className="crs-cta-btns">
@@ -172,7 +172,7 @@ export default function CoursesPage() {
             </a>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

@@ -66,8 +66,8 @@ const englishAdvantages = [
 
 export default function HomePage() {
   return (
-    <>
-      <div className="hero">
+    <main>
+      <header className="hero">
         <div className="hero-bg"></div>
         <div className="hero-content">
           <div className="hero-badge">Est. 2006 · Vaiyampatti, Trichy</div>
@@ -91,18 +91,18 @@ export default function HomePage() {
             <div className="hero-stat"><strong>7</strong><span>Courses Offered</span></div>
           </div>
         </div>
-      </div>
+      </header>
 
       <FadeIn>
-        <section>
-          <h2>Welcome to Vinnarasi Community College, Manapparai</h2>
+        <section aria-labelledby="welcome-heading">
+          <h2 id="welcome-heading">Welcome to Vinnarasi Community College, Manapparai</h2>
           <p>Vinnarasi Community College, located in Vaiyampatti near Manapparai, is a trusted name for vocational training in the Trichy district. We are dedicated to providing quality education and practical skills that lead to successful careers. As a leading vocational training centre, we offer a range of government-approved diploma courses with a strong focus on placement assistance.</p>
         </section>
       </FadeIn>
 
       <FadeIn>
-        <section className="location-seo-section">
-          <h2>Vinnarasi Community College: The Leading Nursing College in Vaiyampatty</h2>
+        <section className="location-seo-section" aria-labelledby="location-heading">
+          <h2 id="location-heading">Vinnarasi Community College: The Leading Nursing College in Vaiyampatty</h2>
           <p>
             Strategically located in <strong>Vaiyampatty</strong>, within the <strong>Manapparai Taluk</strong> of <strong>Trichy District</strong>, 
             Vinnarasi Community College (also known as Vinnarasi Vocational Training Centre) has been the beacon of education 
@@ -122,9 +122,9 @@ export default function HomePage() {
       </FadeIn>
 
       <FadeIn>
-        <div className="why-section">
+        <section className="why-section" aria-labelledby="benefits-heading">
           <div className="why-section-header">
-            <h2>Benefits for Joining Our College</h2>
+            <h2 id="benefits-heading">Benefits for Joining Our College</h2>
           </div>
           <div className="why-cols">
             <div className="why-col why-col--tamil">
@@ -148,21 +148,21 @@ export default function HomePage() {
               </ul>
             </div>
           </div>
-        </div>
+        </section>
       </FadeIn>
 
-      <div className="image-gallery-section">
-        <h2>Campus Life at Vinnarasi Community College</h2>
+      <section className="image-gallery-section" aria-labelledby="gallery-heading">
+        <h2 id="gallery-heading">Campus Life at Vinnarasi Community College</h2>
         <div className="image-gallery">
           {galleryImages.map((img) => (
             <Image key={img.src} src={img.src} alt={img.alt} width={400} height={250} style={{ objectFit: 'cover' }} />
           ))}
         </div>
-      </div>
+      </section>
 
       <FadeIn>
-        <div className="lab-section">
-          <h2>State-of-the-Art Facilities</h2>
+        <section className="lab-section" aria-labelledby="facilities-heading">
+          <h2 id="facilities-heading">State-of-the-Art Facilities</h2>
           <p>Our modern facilities are equipped with the latest equipment and technology to provide hands-on training for our students.</p>
           <div className="lab-gallery">
             {labItems.map((item) => (
@@ -172,7 +172,7 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-        </div>
+        </section>
       </FadeIn>
       <FadeIn>
         <section className="faq-section" style={{ background: '#f8fafc', marginTop: '40px' }}>
@@ -241,6 +241,6 @@ export default function HomePage() {
           })
         }}
       />
-    </>
+    </main>
   );
 }

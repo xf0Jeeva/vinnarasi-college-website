@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Admissions 2025 | Apply for Vocational Diploma Courses | Vinnarasi Community College',
   description:
     'Apply now for 2025 admissions at Vinnarasi Community College, Vaiyampatti, Manapparai. Govt-approved GDA, Patient Care, MLT, OT Technology courses. Free books & uniform for June joiners. ₹1000/month TN Govt scholarship for women.',
-  keywords: ['admission 2025 Vinnarasi Community College', 'vocational course admission Manapparai', 'GDA admission Trichy', 'nursing college admission Tamil Nadu', 'diploma admission Vaiyampatti'],
+  keywords: ['admission 2025 Vinnarasi Community College', 'vocational course admission Manapparai', 'GDA admission Trichy', 'nursing college admission Tamil Nadu', 'diploma admission Vaiyampatti', 'nursing college in vaiyampatty', 'manapparai nursing college admission', 'vaiyampatty nursing college admission'],
   alternates: { canonical: 'https://vinnarasicommunitycollege.in/admissions' },
 };
 
@@ -30,12 +30,12 @@ const highlights = [
 
 export default function AdmissionsPage() {
   return (
-    <>
+    <main>
       <FadeIn>
-        <div className="hero-inner">
+        <header className="hero-inner">
           <h1>Admissions Open 2025</h1>
-          <p>Join Vinnarasi Community College — Vaiyampatti&apos;s most trusted vocational training centre for women since 2006.</p>
-        </div>
+          <p>Join Vinnarasi Community College — Vaiyampatti&apos;s most trusted nursing and vocational training centre for women since 2006.</p>
+        </header>
       </FadeIn>
 
       {/* ── MAIN LAYOUT ── */}
@@ -68,15 +68,15 @@ export default function AdmissionsPage() {
         </aside>
 
         {/* RIGHT — FORM */}
-        <div className="adm-form-panel">
+        <section className="adm-form-panel" aria-labelledby="form-heading">
           <div className="adm-form-header">
-            <h2>Application Form</h2>
+            <h2 id="form-heading">Application Form</h2>
             <p>Fill in your details below and submit — we&apos;ll get back to you within 24 hours.</p>
           </div>
           <Suspense fallback={<p style={{ padding: '20px' }}>Loading form…</p>}>
             <AdmissionsForm />
           </Suspense>
-        </div>
+        </section>
       </div>
 
       {/* ── HOW IT WORKS ── */}
@@ -98,8 +98,9 @@ export default function AdmissionsPage() {
 
       {/* ── REQUIREMENTS + DATES ── */}
       <FadeIn>
-        <div className="adm-info-grid">
-          <div className="adm-info-card">
+        <section className="adm-info-grid" aria-labelledby="info-heading">
+          <h2 id="info-heading" className="sr-only">Admission Information</h2>
+          <article className="adm-info-card">
             <div className="adm-info-icon"><i className="fas fa-clipboard-list"></i></div>
             <h3>Admission Requirements</h3>
             <ul>
@@ -108,8 +109,8 @@ export default function AdmissionsPage() {
               <li>Valid government ID proof</li>
               <li>Passport-size photographs</li>
             </ul>
-          </div>
-          <div className="adm-info-card">
+          </article>
+          <article className="adm-info-card">
             <div className="adm-info-icon"><i className="fas fa-calendar-alt"></i></div>
             <h3>Important Dates</h3>
             <ul>
@@ -118,8 +119,8 @@ export default function AdmissionsPage() {
               <li>New batches start every month</li>
               <li>Contact us for next batch schedule</li>
             </ul>
-          </div>
-          <div className="adm-info-card">
+          </article>
+          <article className="adm-info-card">
             <div className="adm-info-icon"><i className="fas fa-map-marker-alt"></i></div>
             <h3>Visit Us</h3>
             <ul>
@@ -128,9 +129,9 @@ export default function AdmissionsPage() {
               <li>Trichy, Tamil Nadu — 621315</li>
               <li>Mon – Sat: 9:00 AM – 5:00 PM</li>
             </ul>
-          </div>
-        </div>
+          </article>
+        </section>
       </FadeIn>
-    </>
+    </main>
   );
 }
