@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     'Vinarasi Vocational Centre',
     // Location + category (High priority for ranking first)
     'nursing college in Vaiyampatty',
+    'nursing college vaiyampatty',
+    'vaiyampatty nursing college',
+    'manapparai nursing college',
     'college in Vaiyampatty',
     'nursing college Manapparai taluk',
     'best college in Vaiyamppatty',

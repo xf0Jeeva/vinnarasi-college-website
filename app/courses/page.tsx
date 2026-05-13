@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description:
     'Explore govt-approved vocational diploma courses at Vinnarasi Community College, Vaiyampatti — GDA (1 & 2 year), Patient Care Assistant, Medical Lab Technology, Operation Theatre Technology, Village Health Worker. 100% placement in Trichy hospitals.',
   keywords: [
+    'nursing college in vaiyampatty',
+    'nursing college vaiyampatty',
+    'vaiyampatty nursing college',
+    'manapparai nursing college',
     'GDA course Manapparai',
     'general duty assistant diploma Trichy',
     'patient care assistant course Tamil Nadu',

@@ -75,7 +75,7 @@ export default function HomePage() {
             Vinnarasi Community College<br />
             <span>&amp; Vocational Training Centre</span>
           </h1>
-          <p>Your leading choice for job-oriented diploma courses in Vaiyampatti, Manapparai. Empowering careers through skill development since 2006.</p>
+          <p>Your leading choice for <strong>nursing college in Vaiyampatty</strong> and the broader Manapparai region. Empowering careers since 2006 with govt-approved diploma courses in GDA, Patient Care, MLT, and OT.</p>
           <div className="hero-actions">
             <Link href="/courses" className="cta-button">
               Explore Courses <i className="fas fa-arrow-right"></i>
@@ -106,8 +106,9 @@ export default function HomePage() {
           <p>
             Strategically located in <strong>Vaiyampatty</strong>, within the <strong>Manapparai Taluk</strong> of <strong>Trichy District</strong>, 
             Vinnarasi Community College (also known as Vinnarasi Vocational Training Centre) has been the beacon of education 
-            for women in Tamil Nadu since 2006. Whether you are searching for a <em>nursing college in Vaiyampatty</em> or the 
-            <em>best vocational training in Manapparai</em>, our institution offers unparalleled opportunities.
+            for women in Tamil Nadu since 2006. Whether you are searching for a <em>nursing college in Vaiyampatty</em>, 
+            a <em>manapparai nursing college</em>, or the best <em>vaiyampatty nursing college</em>, our institution offers 
+            unparalleled opportunities and 100% placement for your career.
           </p>
           <div style={{ display: 'flex', gap: '12px', marginTop: '1.5rem', flexWrap: 'wrap' }}>
             <Link href="/courses" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#2563eb', color: '#fff', padding: '11px 22px', borderRadius: '8px', fontWeight: 600, fontSize: '0.9rem', textDecoration: 'none' }}>
@@ -173,6 +174,73 @@ export default function HomePage() {
           </div>
         </div>
       </FadeIn>
+      <FadeIn>
+        <section className="faq-section" style={{ background: '#f8fafc', marginTop: '40px' }}>
+          <h2>Frequently Asked Questions (FAQs)</h2>
+          <div className="faq-grid" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            <div className="faq-item" style={{ background: '#fff', padding: '24px', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.05)' }}>
+              <h3 style={{ fontSize: '1.2rem', color: '#1e293b', marginBottom: '10px' }}>What is the best nursing college in Vaiyampatty?</h3>
+              <p style={{ color: '#475569', lineHeight: '1.6' }}><strong>Vinnarasi Community College</strong> is widely recognized as the best <strong>nursing college in Vaiyampatty</strong> and the surrounding Manapparai Taluk. With over 19 years of educational excellence, we offer 100% placement guarantees and govt-approved vocational healthcare courses specifically for women.</p>
+            </div>
+            <div className="faq-item" style={{ background: '#fff', padding: '24px', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.05)' }}>
+              <h3 style={{ fontSize: '1.2rem', color: '#1e293b', marginBottom: '10px' }}>Where can I find a recognized nursing college in Manapparai?</h3>
+              <p style={{ color: '#475569', lineHeight: '1.6' }}>If you are looking for a top-tier <strong>manapparai nursing college</strong>, Vinnarasi Community College is located conveniently in Vaiyampatti, just a short distance away. We are the preferred choice for students across the Trichy district seeking professional medical and healthcare training.</p>
+            </div>
+            <div className="faq-item" style={{ background: '#fff', padding: '24px', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.05)' }}>
+              <h3 style={{ fontSize: '1.2rem', color: '#1e293b', marginBottom: '10px' }}>What diploma courses are offered at Vinnarasi College Vaiyampatty?</h3>
+              <p style={{ color: '#475569', lineHeight: '1.6' }}>Our <strong>Vaiyampatty nursing college</strong> offers a variety of specialized healthcare programs including General Duty Assistant (GDA), Patient Care, Medical Laboratory Technology (MLT), and Operation Theatre Technology (OT). All courses include direct training in local and out-station hospitals.</p>
+            </div>
+            <div className="faq-item" style={{ background: '#fff', padding: '24px', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.05)' }}>
+              <h3 style={{ fontSize: '1.2rem', color: '#1e293b', marginBottom: '10px' }}>Why choose Vinnarasi for vocational training?</h3>
+              <p style={{ color: '#475569', lineHeight: '1.6' }}>Students choose Vinnarasi for our affordable fees, experienced faculty, free Skill Training (Spoken English, Computer skills), and assured employment in private hospitals upon graduation. We are dedicated to women's empowerment through education in Tamil Nadu.</p>
+            </div>
+          </div>
+        </section>
+      </FadeIn>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the best nursing college in Vaiyampatty?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Vinnarasi Community College is widely recognized as the best nursing college in Vaiyampatty and the surrounding Manapparai Taluk. We offer 100% placement guarantees and govt-approved vocational healthcare courses specifically for women."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where can I find a recognized nursing college in Manapparai?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Vinnarasi Community College is located conveniently in Vaiyampatti, near Manapparai. We are the preferred choice for students across the Trichy district seeking professional medical and healthcare training."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What diploma courses are offered at Vinnarasi College Vaiyampatty?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Our Vaiyampatty nursing college offers specialized healthcare programs including General Duty Assistant (GDA), Patient Care, Medical Laboratory Technology (MLT), and Operation Theatre Technology (OT), complete with hospital training."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why choose Vinnarasi for vocational training?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Students choose Vinnarasi for affordable fees, experienced faculty, free Skill Training (Spoken English, Computer skills), and assured employment in private hospitals upon graduation."
+                }
+              }
+            ]
+          })
+        }}
+      />
     </>
   );
 }
